@@ -40,7 +40,7 @@ function App() {
       <main>
         <section className="hero" aria-labelledby="hero-title">
           <div className="hero-badge"><SparkleIcon /> Facebook image URL utility</div>
-          <h1 id="hero-title">See your Facebook photos<br />in <span>better quality.</span></h1>
+          <h1 id="hero-title">See Facebook lock profile photos<br />in <span>better quality.</span></h1>
           <p>Paste a Facebook image URL to explore accessible versions, compare real dimensions, and open the best result we can verify.</p>
           <UrlInput value={url} onChange={(next) => { setUrl(next); if (error) reset() }} onSubmit={() => analyze(url)} onClear={clear} busy={busy} error={error} />
           <div className="trust-row"><span><ShieldIcon /> HTTPS Facebook CDN URLs only</span><span>•</span><span>No uploads</span><span>•</span><span>No URL storage</span></div>
