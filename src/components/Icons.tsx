@@ -16,3 +16,16 @@ export const LockIcon = (props: IconProps) => <svg {...base} {...props}><rect x=
 export const LayersIcon = (props: IconProps) => <svg {...base} {...props}><path d="m12 2 9 5-9 5-9-5 9-5Z"/><path d="m3 12 9 5 9-5M3 17l9 5 9-5"/></svg>
 export const MaximizeIcon = (props: IconProps) => <svg {...base} {...props}><path d="M8 3H3v5M16 3h5v5M8 21H3v-5M16 21h5v-5"/><path d="m3 8 6-6M21 8l-6-6M3 16l6 6M21 16l-6 6"/></svg>
 export const DownloadIcon = (props: IconProps) => <svg {...base} {...props}><path d="M12 3v12M7 10l5 5 5-5"/><path d="M5 21h14a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2"/></svg>
+export const PrismLogoIcon = (props: IconProps) => (
+  <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true" {...props}>
+    <defs>
+      <linearGradient id="lumixa-prism-a" x1="7" y1="4" x2="29" y2="38" gradientUnits="userSpaceOnUse"><stop stopColor="#63e8ff"/><stop offset="1" stopColor="#5375ff"/></linearGradient>
+      <linearGradient id="lumixa-prism-b" x1="23" y1="2" x2="38" y2="39" gradientUnits="userSpaceOnUse"><stop stopColor="#bff8ff"/><stop offset=".48" stopColor="#658cff"/><stop offset="1" stopColor="#bd5dff"/></linearGradient>
+      <linearGradient id="lumixa-prism-c" x1="10" y1="30" x2="38" y2="46" gradientUnits="userSpaceOnUse"><stop stopColor="#6b70ff"/><stop offset="1" stopColor="#d85cff"/></linearGradient>
+    </defs>
+    <path d="M7 10 21 2.5 20 27 7 37V10Z" fill="url(#lumixa-prism-a)" stroke="#92f4ff" strokeWidth="1.2" strokeLinejoin="round"/>
+    <path d="m24 2 14 8.5-1 16L22 36l2-34Z" fill="url(#lumixa-prism-b)" stroke="#c8fbff" strokeWidth="1.2" strokeLinejoin="round"/>
+    <path d="m9 39 13-9 18 8-14 8L9 39Z" fill="url(#lumixa-prism-c)" stroke="#e3a3ff" strokeWidth="1.2" strokeLinejoin="round"/>
+    <path d="m20 27 2 9M22 36l18 2" stroke="white" strokeOpacity=".65" strokeWidth=".8"/>
+  </svg>
+)
