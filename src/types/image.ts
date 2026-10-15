@@ -1,4 +1,4 @@
-export type CandidateKind = 'original' | 'thumbnail-removed'
+export type CandidateKind = 'original' | 'thumbnail-removed' | 'size-limit-removed'
 
 export interface ImageCandidate {
   id: string
