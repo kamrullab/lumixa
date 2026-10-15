@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { CandidateList } from './components/CandidateList'
 import { Footer } from './components/Footer'
 import { LegalPage } from './components/LegalPage'
@@ -11,12 +11,24 @@ import { useImageCandidates } from './hooks/useImageCandidates'
 
 function App() {
   const [url, setUrl] = useState('')
+  const resultsRef = useRef<HTMLElement>(null)
   const { phase, results, error, best, analyze, reset } = useImageCandidates()
   const busy = phase === 'validating' || phase === 'testing' || phase === 'comparing'
   const currentPath = window.location.pathname.replace(/\/+$/, '') || '/'
 
   const clear = () => { setUrl(''); reset() }
   const tryAgain = () => { clear(); window.scrollTo({ top: 0, behavior: 'smooth' }) }
+  useEffect(() => {
+    if ((phase !== 'testing' && phase !== 'complete') || results.length === 0) return
+
+    const frame = window.requestAnimationFrame(() => {
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+      resultsRef.current?.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' })
+    })
+
+    return () => window.cancelAnimationFrame(frame)
+  }, [phase, results.length])
+
   if (currentPath === '/privacy') return <LegalPage kind="privacy" />
   if (currentPath === '/terms') return <LegalPage kind="terms" />
 
@@ -37,7 +49,7 @@ function App() {
         {busy && <LoadingState phase={phase as 'validating' | 'testing' | 'comparing'} />}
 
         {results.length > 0 && phase !== 'idle' && (
-          <section className="results" aria-label="Image analysis results">
+          <section className="results" ref={resultsRef} aria-label="Image analysis results">
             {best && phase === 'complete' && <ImagePreview best={best} originalUrl={url.trim()} onTryAgain={tryAgain} />}
             <CandidateList results={results} bestId={phase === 'complete' ? best?.id : undefined} />
           </section>
