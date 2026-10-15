@@ -20,7 +20,7 @@ export function LegalPage({ kind }: { kind: LegalKind }) {
   const page = content[kind]
 
   useEffect(() => {
-    document.title = `${page.title} — Lumixa`
+    document.title = `${page.title} | Lumixa`
     const description = document.querySelector<HTMLMetaElement>('meta[name="description"]')
     if (description) description.content = page.description
   }, [page])

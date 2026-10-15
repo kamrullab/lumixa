@@ -56,11 +56,11 @@ function App() {
         )}
 
         <section className="how-section" id="how-it-works">
-          <div className="section-intro"><span className="eyebrow">Simple and honest</span><h2>How Lumixa works</h2><p>We check what Facebook makes accessible—without bypassing permissions or promising an unavailable original.</p></div>
+          <div className="section-intro"><span className="eyebrow">Simple and honest</span><h2>How Lumixa works</h2><p>We check what Facebook makes accessible without bypassing permissions or promising an unavailable original.</p></div>
           <div className="steps">
             <article><span className="step-icon"><LockIcon /></span><span className="step-number">01</span><h3>Validate safely</h3><p>We accept only HTTPS links from explicitly supported Facebook CDN hostnames.</p></article>
             <article><span className="step-icon"><LayersIcon /></span><span className="step-number">02</span><h3>Check safe variants</h3><p>The original loads first. A thumbnail-limited alternative is checked only when it can be generated safely.</p></article>
-            <article><span className="step-icon"><MaximizeIcon /></span><span className="step-number">03</span><h3>Compare pixels</h3><p>Successful images are ranked by their measured natural dimensions—not by claims hidden in a URL.</p></article>
+            <article><span className="step-icon"><MaximizeIcon /></span><span className="step-number">03</span><h3>Compare pixels</h3><p>Successful images are ranked by their measured natural dimensions, not by claims hidden in a URL.</p></article>
           </div>
         </section>
 
