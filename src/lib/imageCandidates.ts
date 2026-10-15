@@ -1,7 +1,7 @@
 import type { ImageCandidate } from '../types/image'
 import { validateFacebookImageUrl } from './validateUrl'
 
-const THUMBNAIL_CTP = /^s\d{1,5}x\d{1,5}$/i
+const THUMBNAIL_CTP = /^s?\d{1,5}x\d{1,5}$/i
 
 export function hasThumbnailParameter(url: URL): boolean {
   const value = url.searchParams.get('ctp')

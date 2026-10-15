@@ -512,7 +512,7 @@ Create a production build with `npm run build`. Cloudflare Pages should use that
 ### Current limitations
 
 - Lumixa accepts HTTPS `fbcdn.net` hosts and their subdomains. Other Facebook pages, redirects, and arbitrary image hosts are intentionally rejected.
-- Safe variant generation is intentionally limited to removing a `ctp=s{width}x{height}` thumbnail parameter. Signed delivery and expiry parameters are preserved.
+- Safe variant generation is intentionally limited to removing recognized `ctp={width}x{height}` and `ctp=s{width}x{height}` thumbnail parameters. Signed delivery and expiry parameters are preserved.
 - Browser image loading can confirm display accessibility and usually exposes intrinsic dimensions, but it cannot inspect the underlying cross-origin HTTP response.
 - Facebook may reject modified or expired signed URLs. Lumixa falls back to the original candidate when it remains accessible.
 - Clipboard access depends on browser support and a secure browsing context.
