@@ -15,3 +15,4 @@ export const RotateIcon = (props: IconProps) => <svg {...base} {...props}><path 
 export const LockIcon = (props: IconProps) => <svg {...base} {...props}><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3M12 14v3"/></svg>
 export const LayersIcon = (props: IconProps) => <svg {...base} {...props}><path d="m12 2 9 5-9 5-9-5 9-5Z"/><path d="m3 12 9 5 9-5M3 17l9 5 9-5"/></svg>
 export const MaximizeIcon = (props: IconProps) => <svg {...base} {...props}><path d="M8 3H3v5M16 3h5v5M8 21H3v-5M16 21h5v-5"/><path d="m3 8 6-6M21 8l-6-6M3 16l6 6M21 16l-6 6"/></svg>
+export const DownloadIcon = (props: IconProps) => <svg {...base} {...props}><path d="M12 3v12M7 10l5 5 5-5"/><path d="M5 21h14a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2"/></svg>

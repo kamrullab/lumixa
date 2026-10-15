@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import type { CandidateResult } from '../types/image'
-import { CheckIcon, CopyIcon, ExternalIcon, ImageIcon, RotateIcon } from './Icons'
+import { CheckIcon, CopyIcon, DownloadIcon, ExternalIcon, ImageIcon, RotateIcon } from './Icons'
 
 interface ImagePreviewProps {
   best: CandidateResult
@@ -47,10 +47,12 @@ export function ImagePreview({ best, originalUrl, onTryAgain }: ImagePreviewProp
         <div className="action-stack">
           <button className="primary-button wide" onClick={() => openSafely(best.url)}>Open best image <ExternalIcon /></button>
           <div className="secondary-actions">
+            <a className="secondary-button" href={best.url} download="lumixa-image" target="_blank" rel="noopener noreferrer" aria-label="Download the best accessible image"><DownloadIcon /> Download image</a>
             <button className="secondary-button" onClick={copyUrl}>{copied ? <CheckIcon /> : <CopyIcon />}{copied ? 'Copied' : 'Copy image URL'}</button>
             <button className="secondary-button" onClick={() => openSafely(originalUrl)}><ExternalIcon /> Open original URL</button>
           </div>
           {copyError && <p className="copy-error" role="alert">Clipboard access was blocked. Open the image and copy its URL from the address bar.</p>}
+          <p className="download-note">If the CDN prevents direct downloads, your browser will open the image so you can save it manually.</p>
           <button className="text-button retry" onClick={onTryAgain}><RotateIcon /> Try another URL</button>
         </div>
       </div>
