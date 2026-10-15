@@ -303,3 +303,27 @@ footer > p:last-child { margin-left: 0; }
   .dimension-block { padding: 13px 15px; }
   .action-stack { gap: 8px; }
 }
+@media (min-width: 821px) {
+  .site-header { height: 76px; }
+  .hero { max-width: 1080px; padding: 42px 0 30px; }
+  .hero-badge { margin-bottom: 14px; }
+  .hero h1 { max-width: 1060px; margin-inline: auto; margin-bottom: 14px; font-size: clamp(40px, 4.2vw, 54px); line-height: 1.04; }
+  .hero > p { margin-bottom: 22px; font-size: 16px; line-height: 1.55; }
+  .input-card { max-width: 900px; margin-inline: auto; }
+  .trust-row { margin-top: 14px; }
+}
+
+@media (min-width: 821px) and (max-height: 800px) {
+  .hero { padding-top: 28px; padding-bottom: 24px; }
+  .hero h1 { font-size: clamp(38px, 4vw, 49px); }
+  .input-shell { min-height: 52px; }
+  .form-footer { min-height: 58px; }
+}
+
+@media (min-width: 821px) and (max-height: 680px) {
+  .tagline { display: none; }
+  .hero { padding-top: 20px; }
+  .hero-badge { margin-bottom: 10px; }
+  .hero > p { margin-bottom: 16px; }
+  .trust-row { margin-top: 10px; }
+}
