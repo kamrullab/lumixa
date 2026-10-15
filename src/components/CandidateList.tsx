@@ -4,7 +4,7 @@ import { CheckIcon } from './Icons'
 export function CandidateList({ results, bestId }: { results: CandidateResult[]; bestId?: string }) {
   return (
     <div className="candidate-panel">
-      <div className="section-heading"><div><span className="eyebrow">Transparency first</span><h3>Tested versions</h3></div><span>{results.length} candidate{results.length === 1 ? '' : 's'}</span></div>
+      <div className="section-heading"><div><span className="eyebrow">Transparency first</span><h3>Available versions</h3></div><span>{results.length} version{results.length === 1 ? '' : 's'}</span></div>
       <ul className="candidate-list">
         {results.map((result) => (
           <li key={result.id}>

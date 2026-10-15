@@ -5,4 +5,12 @@
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
+  <url>
+    <loc>https://lumixa.pages.dev/privacy</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://lumixa.pages.dev/terms</loc>
+    <priority>0.5</priority>
+  </url>
 </urlset>

@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import { CandidateList } from './components/CandidateList'
+import { Footer } from './components/Footer'
+import { LegalPage } from './components/LegalPage'
 import { Header } from './components/Header'
 import { ImagePreview } from './components/ImagePreview'
 import { LoadingState } from './components/LoadingState'
@@ -11,9 +13,13 @@ function App() {
   const [url, setUrl] = useState('')
   const { phase, results, error, best, analyze, reset } = useImageCandidates()
   const busy = phase === 'validating' || phase === 'testing' || phase === 'comparing'
+  const currentPath = window.location.pathname.replace(/\/+$/, '') || '/'
 
   const clear = () => { setUrl(''); reset() }
   const tryAgain = () => { clear(); window.scrollTo({ top: 0, behavior: 'smooth' }) }
+  if (currentPath === '/privacy') return <LegalPage kind="privacy" />
+  if (currentPath === '/terms') return <LegalPage kind="terms" />
+
 
   return (
     <div className="app" id="top">
@@ -38,10 +44,10 @@ function App() {
         )}
 
         <section className="how-section" id="how-it-works">
-          <div className="section-intro"><span className="eyebrow">Simple and honest</span><h2>How Lumixa works</h2><p>We test what Facebook makes accessible—without bypassing permissions or promising an unavailable original.</p></div>
+          <div className="section-intro"><span className="eyebrow">Simple and honest</span><h2>How Lumixa works</h2><p>We check what Facebook makes accessible—without bypassing permissions or promising an unavailable original.</p></div>
           <div className="steps">
             <article><span className="step-icon"><LockIcon /></span><span className="step-number">01</span><h3>Validate safely</h3><p>We accept only HTTPS links from explicitly supported Facebook CDN hostnames.</p></article>
-            <article><span className="step-icon"><LayersIcon /></span><span className="step-number">02</span><h3>Test real variants</h3><p>The original loads first. A thumbnail-limited alternative is tested only when it can be generated safely.</p></article>
+            <article><span className="step-icon"><LayersIcon /></span><span className="step-number">02</span><h3>Check safe variants</h3><p>The original loads first. A thumbnail-limited alternative is checked only when it can be generated safely.</p></article>
             <article><span className="step-icon"><MaximizeIcon /></span><span className="step-number">03</span><h3>Compare pixels</h3><p>Successful images are ranked by their measured natural dimensions—not by claims hidden in a URL.</p></article>
           </div>
         </section>
@@ -51,7 +57,7 @@ function App() {
           <div><h2>Built around privacy and clear limits</h2><p>Lumixa processes URLs in your browser. It does not upload, proxy, or store images, and it never attempts to bypass Facebook authentication. Signed CDN links can expire, and removing a thumbnail parameter does not guarantee a larger result.</p></div>
         </section>
       </main>
-      <footer><a className="brand small" href="#top"><span className="brand-mark"><SparkleIcon /></span><span>Lumixa</span></a><p>Reveal More. See Better.</p><p>© {new Date().getFullYear()} Lumixa</p></footer>
+      <Footer />
     </div>
   )
 }
