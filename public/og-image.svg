@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs><linearGradient id="b" x2="1" y2="1"><stop stop-color="#090b1a"/><stop offset=".55" stop-color="#171437"/><stop offset="1" stop-color="#10243b"/></linearGradient><linearGradient id="g"><stop stop-color="#9b87ff"/><stop offset="1" stop-color="#4cc9f0"/></linearGradient></defs>
+  <rect width="1200" height="630" fill="url(#b)"/><circle cx="1030" cy="110" r="260" fill="#715cff" opacity=".12"/><circle cx="140" cy="590" r="290" fill="#36b6e9" opacity=".1"/>
+  <path d="M220 158l24 68 68 24-68 24-24 68-24-68-68-24 68-24 24-68Z" fill="url(#g)"/><text x="350" y="282" fill="white" font-size="104" font-family="Arial, sans-serif" font-weight="700">Lumixa</text><text x="352" y="358" fill="#bbb9d7" font-size="40" font-family="Arial, sans-serif">Reveal More. See Better.</text>
+</svg>
